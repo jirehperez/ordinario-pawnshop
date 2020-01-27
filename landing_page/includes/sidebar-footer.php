@@ -1,59 +1,22 @@
 
-      <!-- <footer class="footer">
-        <div class="container-fluid">
-          <nav class="float-left">
-            <ul>
-              <li>
-                <a href=""></a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </footer> -->
     </div>
   </div>
 
   <!--   Core JS Files   -->
-  <script src="../assets/js/material/core/jquery.min.js"></script>
+  <!-- <script src="../assets/js/material/core/jquery.min.js"></script> -->
+  <script src="../assets/js/material/core/jquery-3.3.1.js"></script>
   <script src="../assets/js/material/core/popper.min.js"></script>
   <script src="../assets/js/material/core/bootstrap-material-design.min.js"></script>
   <script src="../assets/js/material/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Plugin for the momentJs  -->
   <script src="../assets/js/material/plugins/moment.min.js"></script>
-  <!--  Plugin for Sweet Alert -->
-  <script src="../assets/js/material/plugins/sweetalert2.js"></script>
-  <!-- Forms Validations Plugin -->
-  <script src="../assets/js/material/plugins/jquery.validate.min.js"></script>
-  <!-- Plugin for the Wizard, full documentation here: https://github.com/VinceG/twitter-bootstrap-wizard -->
-  <script src="../assets/js/material/plugins/jquery.bootstrap-wizard.js"></script>
-  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
-  <script src="../assets/js/material/plugins/bootstrap-selectpicker.js"></script>
-  <script src="../assets/js/material/plugins/bootstrap-select.js"></script>
-  <!--  Plugin for the DateTimePicker, full documentation here: https://eonasdan.github.io/bootstrap-datetimepicker/ -->
-  <script src="../assets/js/material/plugins/bootstrap-datetimepicker.min.js"></script>
-  <!--  DataTables.net Plugin, full documentation here: https://datatables.net/  -->
   <script src="../assets/js/material/plugins/jquery.dataTables.min.js"></script>
-  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
-  <script src="../assets/js/material/plugins/bootstrap-tagsinput.js"></script>
-  <!-- Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="../assets/js/material/plugins/dataTables.material.min.js"></script>
   <script src="../assets/js/material/plugins/jasny-bootstrap.min.js"></script>
-  <!--  Full Calendar Plugin, full documentation here: https://github.com/fullcalendar/fullcalendar    -->
-  <script src="../assets/js/material/plugins/fullcalendar.min.js"></script>
-  <!-- Vector Map plugin, full documentation here: http://jvectormap.com/documentation/ -->
-  <script src="../assets/js/material/plugins/jquery-jvectormap.js"></script>
-  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-  <script src="../assets/js/material/plugins/nouislider.min.js"></script>
-  <!-- Include a polyfill for ES6 Promises (optional) for IE11, UC Browser and Android browser support SweetAlert -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.js"></script>
-  <!-- Library for adding dinamically elements -->
   <script src="../assets/js/material/plugins/arrive.min.js"></script>
-  <!-- Chartist JS -->
-  <script src="../assets/js/material/plugins/chartist.min.js"></script>
-  <!--  Notifications Plugin    -->
-  <script src="../assets/js/material/plugins/bootstrap-notify.js"></script>
-  <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/material/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
+  <script src="../assets/js/material/material-dashboard.js"></script>
   <script src="../assets/js/form.js"></script>
+  <?php isset($_GET['sub']) == 'renew_redeem' ? '<script src="../assets/js/modal.js"></script>' : ''; ?>
   <script>
     $(document).ready(function() {
       $().ready(function() {
@@ -225,74 +188,68 @@
       });
     });
 
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
-      md.initDashboardPageCharts();
-
+    $(document).ready(function(){
+      $(document).on('click', '#showPassword', function(){
+        let state = $(this).attr('data-id');
+        if(state == 'off'){
+          // $(this).data('id', 'on');
+          $(this).attr('data-id', 'on');
+          $('#password').attr('type', 'text');
+          $(this).html('<i class="fas fa-eye-slash"></i>');
+        }else{
+          // $(this).data('id', 'off');
+          $(this).attr('data-id', 'off');
+          $('#password').attr('type', 'password');
+          $(this).html('<i class="fas fa-eye"></i>');
+        }
+      });
     });
 
-      $(document).ready(function(){
-        $(document).on('click', '#showPassword', function(){
-          let state = $(this).attr('data-id');
-          if(state == 'off'){
-              // $(this).data('id', 'on');
-              $(this).attr('data-id', 'on');
-              $('#password').attr('type', 'text');
-              $(this).html('<i class="fas fa-eye-slash"></i>');
-          }else{
-              // $(this).data('id', 'off');
-              $(this).attr('data-id', 'off');
-              $('#password').attr('type', 'password');
-              $(this).html('<i class="fas fa-eye"></i>');
-          }
-        });
-      });
-
     $(document).ready(function(){
-        $('#next1').on('click', function(){
-            $('.batch1').toggle("slide");
-            $('.batch2').toggle("slide");
-            $('.progress-bar').css('width', '25%');
-            $('.progress-bar').text('25%')
-        });
-        $('#back1').on('click', function(){
-            $('.batch2').toggle("slide");
-            $('.batch1').toggle("slide");
-            $('.progress-bar').css('width', '0%');
-            $('.progress-bar').text('0%')
-        });
-        $('#next2').on('click', function(){
-            // $('.batch1').toggle("slide");
-            $('.batch2').toggle("slide");
-            $('.batch3').toggle("slide");
-            $('.progress-bar').css('width', '50%');
-            $('.progress-bar').text('50%')
-        });
-        $('#back2').on('click', function(){
-            // $('.batch1').toggle("slide");
-            $('.batch3').toggle("slide");
-            $('.batch2').toggle("slide");
-            $('.progress-bar').css('width', '25%');
-            $('.progress-bar').text('25%')
-        });
-        $('#next3').on('click', function(){
-            $('.batch4').toggle("slide");
-            $('.batch3').toggle("slide");
-            $('.progress-bar').css('width', '75%');
-            $('.progress-bar').text('75%')
-        });
-        $('#back3').on('click', function(){
-            $('.batch3').toggle("slide");
-            $('.batch4').toggle("slide");
-            $('.progress-bar').css('width', '75%');
-            $('.progress-bar').text('50%')
-        });
-        $('#add_pawn').on('click', function(){
-            // $('.batch3').toggle("slide");
-            // $('.batch4').toggle("slide");
-            $('.progress-bar').css('width', '100%');
-            $('.progress-bar').text('100%')
-        });
+      $('#next1').on('click', function(){
+          $('.batch1').toggle("slide");
+          $('.batch2').toggle("slide");
+          $('.progress-bar').css('width', '25%');
+          $('.progress-bar').text('25%')
+      });
+      $('#back1').on('click', function(){
+          $('.batch2').toggle("slide");
+          $('.batch1').toggle("slide");
+          $('.progress-bar').css('width', '0%');
+          $('.progress-bar').text('0%')
+      });
+      $('#next2').on('click', function(){
+          // $('.batch1').toggle("slide");
+          $('.batch2').toggle("slide");
+          $('.batch3').toggle("slide");
+          $('.progress-bar').css('width', '50%');
+          $('.progress-bar').text('50%')
+      });
+      $('#back2').on('click', function(){
+          // $('.batch1').toggle("slide");
+          $('.batch3').toggle("slide");
+          $('.batch2').toggle("slide");
+          $('.progress-bar').css('width', '25%');
+          $('.progress-bar').text('25%')
+      });
+      $('#next3').on('click', function(){
+          $('.batch4').toggle("slide");
+          $('.batch3').toggle("slide");
+          $('.progress-bar').css('width', '75%');
+          $('.progress-bar').text('75%')
+      });
+      $('#back3').on('click', function(){
+          $('.batch3').toggle("slide");
+          $('.batch4').toggle("slide");
+          $('.progress-bar').css('width', '50%');
+          $('.progress-bar').text('50%')
+      });
+      $('#add_pawn').on('click', function(){
+          // $('.batch3').toggle("slide");
+          // $('.batch4').toggle("slide");
+          $('.progress-bar').css('width', '100%');
+          $('.progress-bar').text('100%')
+      });
     });
 
     jQuery(document).ready(function($) {
@@ -301,9 +258,25 @@
         if (ww < 700) {
           $('.mobile_resize').removeClass('row');
           $('.mobile_resize').addClass('container');
+          $('.dt-mobile_resize3').removeClass('mdl-cell--3-col');
+          $('.dt-mobile_resize3').addClass('mdl-cell--3-col-phone');
+          $('.dt-mobile_resize4').removeClass('mdl-cell--4-col');
+          $('.dt-mobile_resize4').addClass('mdl-cell--4-col-phone');
+          $('.dt-mobile_resize6').removeClass('mdl-cell--6-col');
+          $('.dt-mobile_resize6').addClass('mdl-cell--6-col-phone');
+          $('.dt-mobile_resize8').removeClass('mdl-cell--8-col');
+          $('.dt-mobile_resize8').addClass('mdl-cell--8-col-phone');
         } else if (ww >= 701) {
           $('.mobile_resize').removeClass('container');
           $('.mobile_resize').addClass('row');
+          $('.dt-mobile_resize3').addClass('mdl-cell--3-col');
+          $('.dt-mobile_resize3').removeClass('mdl-cell--3-col-phone');
+          $('.dt-mobile_resize4').addClass('mdl-cell--4-col');
+          $('.dt-mobile_resize4').removeClass('mdl-cell--4-col-phone');
+          $('.dt-mobile_resize6').addClass('mdl-cell--6-col');
+          $('.dt-mobile_resize6').removeClass('mdl-cell--6-col-phone');
+          $('.dt-mobile_resize8').addClass('mdl-cell--8-col');
+          $('.dt-mobile_resize8').removeClass('mdl-cell--8-col-phone');
         };
       };
       $(window).resize(function(){
@@ -313,6 +286,177 @@
       alterClass();
     });
 
+    
+    function transaction_dates(){
+      var date = document.getElementById("transaction_date").value;
+      // alert(date.length);
+      var days = parseInt(30);
+      var newdate = new Date(date);
+      newdate.setDate(newdate.getDate() + days);
+      
+      var dd = newdate.getDate();
+      var mm = newdate.getMonth() + 1;
+      var y = newdate.getFullYear();
+
+      var someFormattedDate = mm + '/' + dd + '/' + y;
+    
+      // expiration date
+      var days_2 = parseInt(120);
+      var newdate_2 = new Date(date);
+      newdate_2.setDate(newdate_2.getDate() + days_2);
+      
+      var dd_2 = newdate_2.getDate();
+      var mm_2 = newdate_2.getMonth() + 1;
+      var y_2 = newdate_2.getFullYear();
+
+      var someFormattedDate_2 = mm_2 + '/' + dd_2 + '/' + y_2;
+
+      // auction date
+      var days_3 = parseInt(180);
+      var newdate_3 = new Date(date);
+      newdate_3.setDate(newdate_3.getDate() + days_3);
+      
+      var dd_3 = newdate_3.getDate();
+      var mm_3 = newdate_3.getMonth() + 1;
+      var y_3 = newdate_3.getFullYear();
+
+      var someFormattedDate_3 = mm_3 + '/' + dd_3 + '/' + y_3;
+
+      if(someFormattedDate != 'NaN/NaN/NaN'){
+        document.getElementById("maturity_date").value = someFormattedDate;
+        document.getElementById("expiration_date").value = someFormattedDate_2;
+        document.getElementById("auction_date").value = someFormattedDate_3;
+      } else {
+        document.getElementById("maturity_date").value = '';
+        document.getElementById("expiration_date").value = '';
+        document.getElementById("auction_date").value = '';
+      }
+    }
+
+    $(document).on('click', '#addTable', function() {
+      $("#itemTable").append('<table class="table table-striped" width="100%">'+
+        '<thead>'+
+          '<tr>'+
+            '<td>Material <br> Item Type <br> Karat</td>'+
+            '<td>Weight (g)</td>'+
+            '<td>Rate Appraised Value</td>'+
+            '<td>Description</td>'+
+            '<td>Image</td>'+
+            '<td></td>'+
+          '</tr>'+
+        '</thead>'+
+        '<tbody>'+
+        '<tr>'+
+          '<td>'+
+            '<select name="item_type" class="form-control">'+
+              '<option></option>'+
+              '<option value="Gold">Gold</option>'+
+              '<option value="Silver">Silver</option>'+
+            '</select>'+
+          '</td>'+
+          '<td>'+
+            '<input class="form-control" type="number" name="weight" value="0.00">'+
+          '</td>'+
+          '<td>'+
+            '<input class="form-control" type="number" name="rate_appraised" value="0">'+
+          '</td>'+
+          '<td rowspan=3>'+
+            '<textarea class="form-control" rows="5" name="description" id="description"></textarea> <br>'+
+            '<button id="addDiamond" class="btn btn-warning btn-sm" type="button">ADD DIAMOND</button>'+
+          '</td>'+
+          '<td rowspan=3>'+
+            '<label class="btn btn-success btn-sm float-left-jc">'+
+              '<i class="material-icons">arrow_upward</i> Upload Image <input type="file" hidden>'+
+            '</label>'+
+          '</td>'+
+          '<td rowspan=3>'+
+            '<i class="material-icons remove">cancel</i>'+
+          '</td>'+
+        '</tr>'+
+        
+        '<tr>'+
+          '<td>'+
+            '<select name="item_type" class="form-control">'+
+                '<option></option>'+
+                '<option value="Ring">Ring</option>'+
+                '<option value="Necklace">Necklace</option>'+
+                '<option value="Bracelet">Bracelet</option>'+
+              '</select>'+
+          '</td>'+
+          '<td>'+
+            '<input class="form-control" type="number" name="weight" value="0.00">'+
+          '</td>'+
+          '<td>'+
+            '<input class="form-control" type="number" name="rate_appraised_value" value="0">'+
+          '</td>'+
+        '</tr>'+
+        
+        '<tr>'+
+          '<td>'+
+            '<select name="item_type" class="form-control">'+
+                '<option></option>'+
+                '<option value="20">20</option>'+
+                '<option value="21">21</option>'+
+                '<option value="22">22</option>'+
+                '<option value="23">23</option>'+
+                '<option value="24">24</option>'+
+              '</select>'+
+          '</td>'+
+          '<td>'+
+            '<input class="form-control" type="number" name="weight" value="0.00">'+
+          '</td>'+
+          '<td>'+
+          '</td>'+
+        '</tr>'+
+        '</tbody>'+
+        '</table>');
+    });
+    $('#itemTable').on('click','.remove',function() {
+      $(this).closest('table').remove();
+    });
+    
+  $(document).ready(function(){
+    $('#datatbl tfoot th').each( function () {
+      var title = $(this).text();
+      $(this).html( '<input class="form-control" type="text" placeholder="Search '+title+'" />' );
+    } );
+    var table = $('#datatbl').DataTable({
+      "lengthMenu": [[10, 25, 50,100, -1], [10, 25, 50,100, "All"]],
+      "processing": true,
+      "serverSide": true,
+      "ajax":"../pages/scripts/datatables.php?data_type=<?=isset($_GET['sub']) ? $_GET['sub']:'' ;?>",
+      "columnDefs": [{
+        "data":null,
+        "render":function(data, type, row, meta){
+            return data[-1];
+        }},
+        {
+          targets: [ -1, 0, 1, 2 ],
+          className: 'mdl-data-table__cell--non-numeric'
+        },
+        {
+          "targets":-1,
+          "data":null,
+            "render":function(data, type, row, meta){
+            <?php include("actions.php"); ?>
+        }
+        }]
+    });
+    table.columns().every( function () {
+      var that = this;
+
+      $( 'input', this.footer() ).on( 'keyup change clear', function () {
+        if ( that.search() !== this.value ) {
+            that
+                .search( this.value )
+                .draw();
+        }
+      } );
+    } );
+    $('#datatbl tbody').on( 'click', 'button', function () {
+      var data = table.row( $(this).parents('tr') ).data();
+    });
+  });
 </script>
 </body>
 
