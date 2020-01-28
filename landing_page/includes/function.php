@@ -1,6 +1,26 @@
 <?php
 class MainFunction{
 
+  public  $conn;
+  private $host     = "localhost";
+  private $db_name  = "rsk_logistics";
+  private $username = "root";
+  private $password = "regan";
+
+  public function __construct(){
+
+    try{
+      $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+    } catch(PDOException $exception){
+        echo "Connection error: " . $exception->getMessage();
+    }
+
+    $this->connection = $conn;
+
+    return $conn;
+  }
+  
   function formGroup($type=NULL,$title=NULL,$name=NULL,$value=NULL,$attribute=NULL,$date_format=NULL){
     echo '<div class="form-group">
             <label>'.$title.'</label>
@@ -21,6 +41,23 @@ class MainFunction{
     $result = $pg.$sub.$tbl.$id.$ref.$any;
 
     return $result;
+  }
+
+  function editRecord($logged=NULL,$page=NULL,$p_key=NULL){
+    $logged = isset($logged)!='' ? $logged : $_SESSION['logistics_id'];
+		$query = "SELECT 
+      b.module_access
+    FROM
+    rsk_masterlist.module_page a
+      LEFT JOIN rsk_masterlist.module_access b ON b.module_page_id = a.module_page_id AND b.status != 2
+    WHERE a.status != 2 AND a.page = '$page' AND b.credential_id = $logged";
+    $result = $this->connection->prepare($query);
+    $result->execute();
+    $edit_button = "";
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    $edit_button = $row['module_access'];
+
+    return $edit_button;
   }
 
 }

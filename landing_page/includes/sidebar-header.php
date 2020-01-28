@@ -3,18 +3,17 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="">
-  <link rel="icon" type="image/png" href="">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
     Ordinario Pawnshop
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-  <link href="../assets/css/material/material-dashboard.css?v=2.1.1" rel="stylesheet" />
+  <link href="../assets/css/material/material-dashboard.css" rel="stylesheet" />
+  <link href="../assets/css/material/material.min.css" rel="stylesheet" />
+  <link href="../assets/css/material/datatables-material.min.css" rel="stylesheet" />
   <link href="../assets/css/form.css" rel="stylesheet" />
+  <?php isset($_GET['sub']) == 'renew_redeem' ? '<link href="../assets/css/modal.css" rel="stylesheet" />' : ''; ?>
 </head>
 
 <body class="">
@@ -34,7 +33,7 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link <?= $tbl == 'pawn_and_auction' ? '' : 'collapsed' ;?>" data-toggle="collapse" href="#pagesExamples" 
               aria-expanded="<?= $tbl == 'pawn_and_auction' ? 'true' : 'false' ;?>">
               <i class="material-icons">star</i>
@@ -42,7 +41,7 @@
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?= $tbl == 'pawn_and_auction' ? 'show' : '' ;?>"" id="pagesExamples" style="">
+            <div class="collapse <?= $tbl == 'pawn_and_auction' ? 'show' : '' ;?>" id="pagesExamples">
               <ul class="nav">
                 <li class="nav-item <?= $sub == 'sangla' ? 'active' : '' ;?>">
                   <a class="nav-link" href="<?= $connect->url_enc('form','sangla','pawn_and_auction'); ?>">
@@ -50,16 +49,10 @@
                     <span class="sidebar-normal"> Sangla </span>
                   </a>
                 </li>
-                <li class="nav-item <?= $sub == 'renew' ? 'active' : '' ;?>">
-                  <a class="nav-link" href="<?= $connect->url_enc('form','renew','pawn_and_auction'); ?>">
+                <li class="nav-item <?= $sub == 'renew_redeem' ? 'active' : '' ;?>">
+                  <a class="nav-link" href="<?= $connect->url_enc('table','renew_redeem','pawn_and_auction'); ?>">
                     <span class="sidebar-mini"> <i class="material-icons">star</i> </span>
-                    <span class="sidebar-normal"> Renew </span>
-                  </a>
-                </li>
-                <li class="nav-item <?= $sub == 'redeem' ? 'active' : '' ;?>">
-                  <a class="nav-link" href="<?= $connect->url_enc('form','redeem','pawn_and_auction'); ?>">
-                    <span class="sidebar-mini"> <i class="material-icons">star</i> </span>
-                    <span class="sidebar-normal"> Redeem </span>
+                    <span class="sidebar-normal"> Renew & Redeem </span>
                   </a>
                 </li>
                 <li class="nav-item <?= $sub == 'auction' ? 'active' : '' ;?>">
@@ -123,7 +116,7 @@
                 </a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a class="nav-link" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">notifications</i>
                   <span class="notification">0</span>
                   <p class="d-lg-none d-md-block">Notifications</p>
