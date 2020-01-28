@@ -71,6 +71,30 @@
               </ul>
             </div>
           </li>
+
+          <li class="nav-item ">
+            <a class="nav-link <?= $tbl == 'settings' ? '' : 'collapsed' ;?>" data-toggle="collapse" href="#settings" 
+              aria-expanded="<?= $tbl == 'settings' ? 'true' : 'false' ;?>">
+              <i class="material-icons">build</i>
+              <p> Settings
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse <?= $tbl == 'settings' ? 'show' : '' ;?>"" id="settings" style="">
+              <ul class="nav">
+                <li class="nav-item <?= $sub == 'karat_rates' ? 'active' : '' ;?>">
+                  <a class="nav-link" href="<?= $connect->url_enc('form','karat_rates','settings'); ?>">
+                    <span class="sidebar-mini"> <i class="material-icons">book</i> </span>
+                    <span class="sidebar-normal"> Karat Rates </span>
+                  </a>
+                </li>
+
+
+
+              </ul>
+            </div>
+          </li>
+
         </ul>
       </div>
     </div>
