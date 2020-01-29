@@ -5,7 +5,9 @@
  <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top">Title here!</a>
+      <a class="navbar-brand js-scroll-trigger" href="">
+        <img style="width:20%;" src="landing_page/assets/img/Ordinario_Pawnshop_Logo.png">
+      </a>
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -17,12 +19,11 @@
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#services">Services</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="pages/sign_in.php">Sign In</a>
+            <a class="nav-link js-scroll-trigger" href="landing_page/pages/sign_in.php" style="white-space:nowrap">Sign In</a>
           </li>
         </ul>
       </div>

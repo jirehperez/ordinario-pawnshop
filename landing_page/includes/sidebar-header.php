@@ -22,7 +22,7 @@
       <!-- data-color="purple | azure | green | orange | danger" data-image="../assets/img/ordinario.jpg" -->
       <div class="logo">
         <a class="simple-text logo-normal">
-          ORDINARIO PAWNSHOP
+          <img style="width:90%;" src="../assets/img/Ordinario_Pawnshop_Logo.png">
         </a>
       </div>
       <div class="sidebar-wrapper">
@@ -81,9 +81,6 @@
                     <span class="sidebar-normal"> Karat Rates </span>
                   </a>
                 </li>
-
-
-
               </ul>
             </div>
           </li>
@@ -97,7 +94,7 @@
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <a class="navbar-brand" href="#pablo">
-                <?= isset($_GET['pg']) ? strtoupper(str_replace('_',' ',$tbl)) : strtoupper(str_replace('.php','',basename($_SERVER['REQUEST_URI']))); ?></a>
+                <?= isset($_GET['pg']) ? strtoupper(str_replace('_',' ',$tbl)) : strtoupper(str_replace(['.php','?'],'',basename($_SERVER['REQUEST_URI']))); ?></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -136,7 +133,7 @@
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Log out</a>
+                  <a class="dropdown-item" href="../../">Log out</a>
                 </div>
               </li>
             </ul>

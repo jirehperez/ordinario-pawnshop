@@ -2,7 +2,7 @@
 class MainFunction{
 
   public  $conn;
-  private $host     = "localhost";
+  private $host     = "192.168.0.179";
   private $db_name  = "rsk_logistics";
   private $username = "root";
   private $password = "regan";
@@ -10,17 +10,17 @@ class MainFunction{
   public function __construct(){
 
     try{
-      $conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+      $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
     } catch(PDOException $exception){
         echo "Connection error: " . $exception->getMessage();
     }
 
-    $this->connection = $conn;
+    $this->connection = $this->conn;
 
-    return $conn;
+    return $this->conn;
   }
-  
+
   function formGroup($type=NULL,$title=NULL,$name=NULL,$value=NULL,$attribute=NULL,$date_format=NULL){
     echo '<div class="form-group">
             <label>'.$title.'</label>

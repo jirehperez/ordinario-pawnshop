@@ -11,7 +11,7 @@
 <section class="h-100">
 	<div class="align-items-center h-100">
 		<div class="mx-auto col-md-8 col-sm-10 col-lg-7 col-xl-6 col-12">
-			<img src="../assets/img/original_logo.png" alt="ordinario_pawnshop" class="img-fluid mb-5 d-block mx-auto rounded"  style="margin-top:3rem!important">
+			<img src="../assets/img/ordinario_colored.png" alt="ordinario_pawnshop" class="img-fluid mb-5 d-block mx-auto rounded"  style="margin-top:3rem!important">
 			<div class="card border">
 				<div class="card-header  text-center">
 						Insert Title Here
