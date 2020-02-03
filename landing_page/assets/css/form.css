@@ -1128,7 +1128,7 @@ footer .pull-center {
     width: 100%;
   }
 }
-<<<<<<< HEAD
+
 .card-body {
   min-height: 65vh;
 }
@@ -1233,7 +1233,7 @@ footer .pull-center {
    background-color:#702230;
   border-color:#702230;
 }
-=======
+
 #datatbl thead th {
   vertical-align: text-top;
   border-bottom: 2px solid #dee2e6;
@@ -1272,4 +1272,4 @@ footer .pull-center {
 .center_tag{
   text-align: center;
 }
->>>>>>> 8200f6520770c6fdb4f85dd8720225bda9dbe3f1
+

@@ -14,7 +14,7 @@
 			<img src="../assets/img/ordinario_colored.png" alt="ordinario_pawnshop" class="img-fluid mb-5 d-block mx-auto rounded"  style="margin-top:3rem!important">
 			<div class="card border">
 				<div class="card-header  text-center">
-						Insert Title Here
+						Ordinario Pawnshop
 				</div>
 				<div class="card-body">
 					<form action="dashboard.php">

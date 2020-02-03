@@ -8,14 +8,20 @@
   <script src="../assets/js/material/core/popper.min.js"></script>
   <script src="../assets/js/material/core/bootstrap-material-design.min.js"></script>
   <script src="../assets/js/material/plugins/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../assets/js/material/material-dashboard.js"></script>
+
   <!-- Plugin for the momentJs  -->
   <script src="../assets/js/material/plugins/moment.min.js"></script>
   <script src="../assets/js/material/plugins/jquery.dataTables.min.js"></script>
   <script src="../assets/js/material/plugins/dataTables.material.min.js"></script>
   <script src="../assets/js/material/plugins/jasny-bootstrap.min.js"></script>
   <script src="../assets/js/material/plugins/arrive.min.js"></script>
-  <script src="../assets/js/material/material-dashboard.js"></script>
+
   <script src="../assets/js/form.js"></script>
+  <script src="../assets/js/datepicker.js"></script>
+  <script src="../assets/js/datepicker.en.js"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script> -->
+  <!-- <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script> -->
   <?php isset($_GET['sub']) == 'renew_redeem' ? '<script src="../assets/js/modal.js"></script>' : ''; ?>
   <script>
     $(document).ready(function() {
@@ -287,8 +293,9 @@
     });
 
     
-    function transaction_dates(){
-      var date = document.getElementById("transaction_date").value;
+    function transaction_dates(element){
+      // var date = document.getElementById("transaction_date").value;
+      var date = element.value;
       // alert(date.length);
       var days = parseInt(30);
       var newdate = new Date(date);
@@ -370,7 +377,7 @@
             '</label>'+
           '</td>'+
           '<td rowspan=3>'+
-            '<i class="material-icons remove">cancel</i>'+
+            '<i class="material-icons remove" style="cursor: pointer;">cancel</i>'+
           '</td>'+
         '</tr>'+
         
@@ -457,6 +464,18 @@
       var data = table.row( $(this).parents('tr') ).data();
     });
   });
+      
+  $(document).ready(function(){
+    $('#datepicker').datepicker({
+    language: 'en',
+    todayButton: new Date(),
+    autoClose : true
+    // inline : true,
+    // minDate: new Date() // Now can select only dates, which goes after today
+});
+// $("#selectpicker").selectpicker();
+
+ });
 </script>
 </body>
 

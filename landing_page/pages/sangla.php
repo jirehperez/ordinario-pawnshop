@@ -17,15 +17,58 @@
       .margin-small{
         margin: 1rem 0;
       }
+      .float-right-mey{
+        float: right;
+      }
     }
-    table{
-      text-align: center;
-      font-size: 11pt !important;
-      padding: 0px !important;
+    @media (min-width: 1200px){
+      .col-xl-12-jc{
+        flex:0 0 63.22222%;
+        margin-left:-0.4rem;
+      }
+
     }
-    table td{
-      border:1px solid #D2D2D2
+    @media (min-width: 992px){
+      .col-lg-7-jc{
+        flex:0 0 62.22222%;
+        margin-left:-0.7rem;
+      }
+
     }
+
+    @media (min-width: 768px){
+      .col-md-7-jc{
+        flex:0 0 62.77777%;
+        margin-left:-0.7rem;
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+  .text-md-center-jc {
+    text-align: center !important;
+  }
+  .mx-auto-jc {
+    margin-right: auto !important;
+    margin-left: auto !important;
+
+  }
+}
+
+
+
+  table{
+    text-align: center;
+    font-size: 11pt !important;
+    padding: 0px !important;
+  }
+  table td{
+    border:1px solid #D2D2D2
+  }
+  .form-control-jc{
+    margin-top : -1.3rem;
+  }
 </style>
 <div class="content">
   <div class="container-fluid">
@@ -48,23 +91,23 @@
       </div>
       <div class="card">
         <form action="reports/pawn_print.php">
-        <section class="batch1">
+        <section class="batch1" style="display:none">
           <div class="card-header card-header-primary text-center">
             TICKET DETAILS
           </div> <br>
           <div class="card-body">
-            <div class="col-xl-12 row mobile_resize">
-              <div class="col-xl-6">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
                 <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">PT #:</label>
-                  <div class="col-xl-6 pt-2">
+                  <label class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 col-form-label">PT #:</label>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pt-2">
                     1
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">Transaction Type:</label>
-                  <div class="col-xl-6">
-                    <select name="transaction_type" id="transaction_type" class="form-control">
+                  <label class="col-xl-5 col-form-label">Transaction Type:</label>
+                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-12  mx-auto-jc">
+                    <select name="transaction_type" id="transaction_type" class="form-control" data-style="btn-info">
                       <option disabled="" selected=""></option>
                       <option value="Old">Old</option>
                       <option value="New">New</option>
@@ -72,36 +115,37 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-xl-4 col-form-label">Processed By:</label>
+                  <label class="col-xl-5 col-form-label">Processed By:</label>
                   <div class="col-xl-6 pt-2">
                     Chris Domingo
                   </div>
                 </div>
               </div>
               <!-- second column -->
-              <div class="col-xl-6">
-              <div class="form-group row">
-                <label class="col-xl-4">Transaction Date:</label>
-                <div class="col-xl-12">
-                  <input type="date" name="transaction_date" id="transaction_date" class="form-control" onchange="transaction_dates()">
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc mt-3">
+              <div class="row">
+                <label class="col-xl-5">Transaction Date:</label>
+                <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-11 mx-auto-jc">
+
+                  <input type="text" name="transaction_date" id="datepicker" data-id="" class="form-control form-control-jc" onblur="transaction_dates(this)">
                 </div>
               </div>
-                <div class="form-group row mt-3">
-                  <label class="col-xl-4">Maturity Date:</label>
-                  <div class="col-xl-12">
-                    <input type="text" name="maturity_date" id="maturity_date" class="form-control" readonly>
+                <div class="row mt-3">
+                  <label class="col-xl-5">Maturity Date:</label>
+                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-11 mx-auto-jc">
+                    <input type="text" name="maturity_date" id="maturity_date" class="form-control form-control-jc"  readonly>
                   </div>
                 </div>
-                <div class="form-group row mt-3">
-                  <label class="col-xl-4">Expiration Date:</label>
-                  <div class="col-sm-12">
-                    <input type="text" name="expiration_date" id="expiration_date" class="form-control" readonly>
+                <div class="row mt-3">
+                  <label class="col-xl-5">Expiration Date:</label>
+                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-11 mx-auto-jc">
+                    <input type="text" name="expiration_date" id="expiration_date" class="form-control form-control-jc"  readonly>
                   </div>
                 </div>
-                <div class="form-group row mt-3">
-                  <label class="col-xl-4">Auction Date:</label>
-                  <div class="col-xl-12">
-                    <input type="text" name="auction_date" id="auction_date" class="form-control" readonly>
+                <div class="row mt-3">
+                  <label class="col-xl-5">Auction Date:</label>
+                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-11 mx-auto-jc">
+                    <input type="text" name="auction_date" id="auction_date" class="form-control form-control-jc" readonly>
                   </div>
                 </div>
               </div>
@@ -115,10 +159,11 @@
             CUSTOMER
           </div> <br>
           <div class="card-body">
-            <div class="col-xl-12 row mobile_resize">
-              <div class="col-xl-6">
-                <div class="form-group label-floating">
-                  <label class="control-label">Name</label>
+             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize">
+             <div class="mx-auto col-xl-6 col-lg-7 col-md-7 col-sm-12 text-md-center-jc ">
+                <div class="form-group row">
+                <label class="col-xl-4 col-lg-4 col-md-4 mt-2">Name</label>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
                     <select name="customer" id="customer" class="form-control">
                       <option></option>
                       <option value="REGAN INDUSTRIAL SALES INC.">REGAN INDUSTRIAL SALES INC.</option>
@@ -126,41 +171,46 @@
                       <option value="KIRIN RESOURCES INC.">KIRIN RESOURCES INC.</option>
                     </select>
                 </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">ID Presented:</label>
-                    <select name="id_type" id="id_type" class="form-control">
-                      <option></option>
-                      <option value="SSS">SSS</option>
-                      <option value="Driver's License">Driver's License</option>
-                      <option value="Pag-ibig">Pag-ibig</option>
-                      <option value="Postal ID">Postal ID</option>
-                      <option value="Passport">Passport</option>
-                    </select>
                 </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">Country</label>
-                  <select name="country_id" id="country_id" class="form-control">
-                    <option disabled="" selected=""></option>
-                    <option value="Afghanistan"> Afghanistan </option>
-                    <option value="Albania"> Albania </option>
-                    <option value="Algeria"> Algeria </option>
-                    <option value="American Samoa"> American Samoa </option>
-                    <option value="Andorra"> Andorra </option>
-                    <option value="Angola"> Angola </option>
-                    <option value="Anguilla"> Anguilla </option>
-                    <option value="Antarctica"> Antarctica </option>
-                  </select>
-                </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">ID Number:</label>
-                  <input type="text" class="form-control" name="id_number" id="id_number">
-                </div>
-              </div>
-              <div class="col-xl-6">
                 <div class="form-group row">
-                  <label class="label-floating">ID Image:</label>
-                  <div class="col-sm-12">
-                    <label class="btn btn-success btn-sm float-left-jc">  
+                <label class="col-xl-4 col-lg-4 col-md-4 mt-2">ID Presented</label>
+                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
+                      <select name="id_type" id="id_type" class="form-control">
+                        <option></option>
+                        <option value="SSS">SSS</option>
+                        <option value="Driver's License">Driver's License</option>
+                        <option value="Pag-ibig">Pag-ibig</option>
+                        <option value="Postal ID">Postal ID</option>
+                        <option value="Passport">Passport</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                <label class="col-xl-4 col-lg-4 col-md-4 mt-2">Country</label>
+                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
+                    <select name="country_id" id="country_id" class="form-control">
+                      <option disabled="" selected=""></option>
+                      <option value="Afghanistan"> Afghanistan </option>
+                      <option value="Albania"> Albania </option>
+                      <option value="Algeria"> Algeria </option>
+                      <option value="American Samoa"> American Samoa </option>
+                      <option value="Andorra"> Andorra </option>
+                      <option value="Angola"> Angola </option>
+                      <option value="Anguilla"> Anguilla </option>
+                      <option value="Antarctica"> Antarctica </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                <label class="col-xl-4 col-lg-4 col-md-4 mt-3 ml-3">ID Number:</label>
+                  <div class="col-xl-12-jc col-lg-7-jc col-md-7-jc col-sm-8 col-11 mx-auto-jc">
+                     <input type="text" class="form-control" name="id_number" id="id_number">
+                  </div>
+                </div>
+                <div class="form-group row">
+                <label class="col-xl-4 col-lg-4 col-md-4 mt-2">ID Image:</label>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-12 mx-auto-jc">
+                    <label class="btn btn-success btn-sm">  
                       <i class="material-icons">arrow_upward</i> Upload Image <input type="file" hidden>
                     </label>  
                   </div>
@@ -172,7 +222,7 @@
           </div>
         </section>
         <!-- Item Tab -->
-        <section class="batch3" style="display:none;">
+        <section class="batch3" style="display:none">
           <div class="card-header card-header-primary text-center">
             ITEM
           </div> <br>
@@ -206,9 +256,10 @@
                   </label>
                 </div>
               </div>
-              <div class="col-xl-12 container table-responsive" id="itemTable">
+              <div class="col-xl-12 col-sm-12 container table-responsive" id="itemTable">
               </div>
-              <button id="addTable" class="btn btn-warning btn-sm" type="button">ADD</button>
+                     <button id="addTable" class="btn btn-warning btn-sm" type="button">ADD</button>
+
               <!-- <button type="button" class="btn btn-primary btn-sm mx-auto">Submit</button> -->
             </div>
             <button type="button" class="btn btn-primary float-left-jc" id="back2"><i class="material-icons">arrow_back</i></button>
@@ -216,40 +267,50 @@
           </div>
         </section>
         <!-- Computation Tab -->
-        <section class="batch4" style="display:none">
+        <section class="batch4">
           <div class="card-header card-header-primary text-center">
             COMPUTATION
           </div> <br>
           <div class="card-body">
-            <div class="col-xl-12 row mobile_resize">
-              <div class="col-xl-6">
-                <div class="form-group label-floating">
-                  <label class="control-label">Appraised Value</label>
-                    <input class="form-control" type="number" name="appraised_value" id="appraised_value" value="0">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
+                <div class="row">
+                <label class="col-xl-4 mt-3">Appraised Value</label>
+                    <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12  mx-auto-jc"> 
+                        <input class="form-control" type="number" name="appraised_value" id="appraised_value" value="0">
+                    </div>
                 </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">Principal</label>
-                    <input class="form-control" type="number" name="principal" id="principal" value="0">
+                <div class="row">
+                <label class="col-xl-4 mt-3">Principal</label>
+                  <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12 mx-auto-jc"> 
+                      <input class="form-control" type="number" name="principal" id="principal" value="0">
+                  </div>
                 </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">Other Charges</label>
-                    <input class="form-control" type="number" name="other_charges" id="other_charges" value="0">
+                <div class="row">
+                <label class="col-xl-4 mt-3">Other Charges</label>
+                  <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12 mx-auto-jc"> 
+                      <input class="form-control" type="number" name="other_charges" id="other_charges" value="0">
+                  </div>
                 </div>
-                <div class="form-group label-floating">
-                  <label class="control-label">Net Proceeds</label>
+                <div class="row">
+                 <label class="col-xl-4 mt-3">Net Proceeds</label>
+                  <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12 mx-auto-jc"> 
                     <input class="form-control" type="number" name="net_proceeds" id="net_proceeds" value="0">
+                  </div>
                 </div>
               </div>
-              <div class="col-xl-6">
-                <div class="form-group label-floating">
-                  <label class="control-label">Other Charges</label>
-                    <select class="form-control">
-                      <option></option>
-                    </select>
+              <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
+                <div class="form-group row">
+                  <label class="col-xl-4 mt-3">Other Charges</label>
+                    <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12 mx-auto-jc"> 
+                      <select class="form-control">
+                        <option></option>
+                      </select>
+                    </div>
                 </div>
-                <div class="form-group row label-floating">
-                  <label class="control-label">Amount</label>
-                  <div class="col-sm-3">
+                <div class="row">
+                <label class="col-xl-4 mt-3 ml-3">Amount</label>
+                <div class="col-xl-12-jc col-lg-7-jc col-md-7-jc col-sm-8 col-11 mx-auto-jc">
                     <input class="form-control" type="number" value="0">
                   </div>
                     <button type="button" class="btn btn-success btn-sm"><i class="material-icons">add</i></button>
