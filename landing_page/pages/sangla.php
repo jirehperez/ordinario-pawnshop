@@ -6,6 +6,11 @@
       .float-right-mey{
         float: right;
       }
+      .col-sm-7-jc-amount{
+        flex:0 0 61.478%;
+        margin-left:18.5%;
+      }
+
     }
     @media(max-width: 576px){
       .btn-small {
@@ -20,41 +25,61 @@
       .float-right-mey{
         float: right;
       }
-    }
-    @media (min-width: 1200px){
-      .col-xl-12-jc{
-        flex:0 0 63.22222%;
-        margin-left:-0.4rem;
+      .col-7-jc-amount{
+        flex:0 0 74.378%;
+        margin-left:3%;
       }
-
+      
     }
-    @media (min-width: 992px){
-      .col-lg-7-jc{
-        flex:0 0 62.22222%;
-        margin-left:-0.7rem;
-      }
-
-    }
-
+    
     @media (min-width: 768px){
       .col-md-7-jc{
         flex:0 0 62.77777%;
         margin-left:-0.7rem;
       }
-
+      .col-md-7-jc-amount{
+        flex:0 0 61.478%;
+        margin-left:2.3rem;
+      }
     }
 
 
     @media (max-width: 768px) {
-  .text-md-center-jc {
-    text-align: center !important;
-  }
-  .mx-auto-jc {
-    margin-right: auto !important;
-    margin-left: auto !important;
-
-  }
+    .text-md-center-jc {
+      text-align: center !important;
+    }
+    /* .mx-auto-jc {
+      margin-right: auto !important;
+      margin-left: auto !important;
+    } */
+    .mx-auto-jc:not(.col-sm-7-jc-amount) {
+      margin-right: auto !important;
+      margin-left: auto !important;
+      }
 }
+@media (min-width: 992px){
+      .col-lg-7-jc{
+        flex:0 0 62.22222%;
+        margin-left:-0.7rem;
+      }
+      .col-lg-7-jc-amount{
+        flex:0 0 54.878%;
+        margin-left:2.291rem;
+      }
+  }
+    @media(min-width: 1200px){
+      .col-xl-12-jc{
+        flex:0 0 63.22222%;
+        margin-left:-0.4rem;
+      }
+      .col-xl-12-jc-amount{
+        flex:0 0 42.878%;
+        margin-left:0.6rem;
+      }
+
+    }
+
+
 
 
 
@@ -272,7 +297,7 @@
             COMPUTATION
           </div> <br>
           <div class="card-body">
-            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize ">
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
                 <div class="row">
                 <label class="col-xl-4 mt-3">Appraised Value</label>
@@ -301,20 +326,20 @@
               </div>
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
                 <div class="form-group row">
-                  <label class="col-xl-4 mt-3">Other Charges</label>
-                    <div class="col-xl-7 col-lg-10 col-md-10 col-sm-8 col-12 mx-auto-jc"> 
+                  <label class="col-xl-3 mt-3">Other Charges</label>
+                    <div class="col-xl-6 col-lg-8 col-md-9 col-sm-8 col-12 mx-auto-jc"> 
                       <select class="form-control">
                         <option></option>
                       </select>
                     </div>
                 </div>
                 <div class="row">
-                <label class="col-xl-4 mt-3 ml-3">Amount</label>
-                <div class="col-xl-12-jc col-lg-7-jc col-md-7-jc col-sm-8 col-11 mx-auto-jc">
+                <label class="col-xl-3 mt-3 ml-3">Amount</label>
+                <div class="col-xl-12-jc-amount col-lg-7-jc-amount col-md-7-jc-amount col-sm-7-jc-amount col-7-jc-amount mx-auto-jc">
                     <input class="form-control" type="number" value="0">
                   </div>
-                    <button type="button" class="btn btn-success btn-sm"><i class="material-icons">add</i></button>
-                    <button type="button" class="btn btn-danger btn-sm"><i class="material-icons">remove</i></button>
+                    <button type="button" class="btn btn-success btn-sm px-2 py-1"><i class="material-icons">add</i></button>
+                    <button type="button" class="btn btn-danger btn-sm px-2 py-1"><i class="material-icons">remove</i></button>
                 </div>
               </div>
             </div>

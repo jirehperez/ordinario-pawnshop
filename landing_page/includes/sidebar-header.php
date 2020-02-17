@@ -9,6 +9,8 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
   <link href="../assets/css/material/material-dashboard.css" rel="stylesheet" />
   <link href="../assets/css/material/material.min.css" rel="stylesheet" />
   <link href="../assets/css/material/datatables-material.min.css" rel="stylesheet" />
@@ -71,6 +73,28 @@
           </li>
 
           <li class="nav-item ">
+            <a class="nav-link <?= $tbl == 'Reports' ? '' : 'collapsed' ;?>" data-toggle="collapse" href="#reports" 
+              aria-expanded="<?= $tbl == 'reports' ? 'true' : 'false' ;?>">
+              <i class="material-icons">build</i>
+              <p> Reports
+                <b class="caret"></b>
+              </p>
+            </a>
+            <div class="collapse <?= $tbl == 'reports' ? 'show' : '' ;?>" id="reports" style="">
+              <ul class="nav">
+                <li class="nav-item <?= $sub == 'notice_listing' ? 'active' : '' ;?>">
+                  <a class="nav-link" href="<?= $connect->url_enc('table','notice_listing','reports'); ?>">
+                    <span class="sidebar-mini"> <i class="material-icons">book</i> </span>
+                    <span class="sidebar-normal"> Notice Listing </span>
+                  </a>
+                </li>
+
+
+              </ul>
+            </div>
+          </li>
+
+          <li class="nav-item ">
             <a class="nav-link <?= $tbl == 'settings' ? '' : 'collapsed' ;?>" data-toggle="collapse" href="#settings" 
               aria-expanded="<?= $tbl == 'settings' ? 'true' : 'false' ;?>">
               <i class="material-icons">build</i>
@@ -78,7 +102,7 @@
                 <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse <?= $tbl == 'settings' ? 'show' : '' ;?>"" id="settings" style="">
+            <div class="collapse <?= $tbl == 'settings' ? 'show' : '' ;?>" id="settings" style="">
               <ul class="nav">
                 <li class="nav-item <?= $sub == 'karat_rates' ? 'active' : '' ;?>">
                   <a class="nav-link" href="<?= $connect->url_enc('form','karat_rates','settings'); ?>">
@@ -86,6 +110,8 @@
                     <span class="sidebar-normal"> Karat Rates </span>
                   </a>
                 </li>
+
+
               </ul>
             </div>
           </li>

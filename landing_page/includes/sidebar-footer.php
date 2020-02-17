@@ -12,7 +12,8 @@
 
   <!-- Plugin for the momentJs  -->
   <script src="../assets/js/material/plugins/moment.min.js"></script>
-  <script src="../assets/js/material/plugins/jquery.dataTables.min.js"></script>
+  <!-- <script src="../assets/js/material/plugins/jquery.dataTables.min.js"></script> -->
+  <script src="../assets/js/material/plugins/jquery.dataTables-2.min.js"></script>
   <script src="../assets/js/material/plugins/dataTables.material.min.js"></script>
   <script src="../assets/js/material/plugins/jasny-bootstrap.min.js"></script>
   <script src="../assets/js/material/plugins/arrive.min.js"></script>
@@ -423,6 +424,14 @@
     });
     
   $(document).ready(function(){
+    var sampleTable = $('#dataTableExample').DataTable({
+      columnDefs: [
+            {
+                targets: [ 0, 1, 2,3,4,5 ],
+                className: 'mdl-data-table__cell--non-numeric'
+            }
+        ]
+    });
     $('#datatbl tfoot th').each( function () {
       var title = $(this).text();
       $(this).html( '<input class="form-control" type="text" placeholder="Search '+title+'" />' );
