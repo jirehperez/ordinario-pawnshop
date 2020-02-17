@@ -454,7 +454,9 @@
           "targets":-1,
           "data":null,
             "render":function(data, type, row, meta){
-            <?php include("actions.php"); ?>
+            <?php 
+              // include("actions.php");
+               ?>
         }
         }]
     });

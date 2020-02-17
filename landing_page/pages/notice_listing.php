@@ -30,16 +30,16 @@
                 <div class="card-body">
                 <div class="material-datatables">
                     <div class="row">
-                    <div class="col-xl-12">
+                    <div class="col-xl-12 table-responsive">
                 <table id="dataTableExample" class="mdl-data-table" style="width:100%">
                     <thead>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th></th>
+                            <th>Pawn Ticket</th>
+                            <th>Customer</th>
+                            <th>Last Transaction Date</th>
+                            <th>Address</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>

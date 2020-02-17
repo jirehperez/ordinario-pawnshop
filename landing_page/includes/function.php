@@ -9,16 +9,16 @@ class MainFunction{
 
   public function __construct(){
 
-    try{
-      $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
-      $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
-    } catch(PDOException $exception){
-        echo "Connection error: " . $exception->getMessage();
-    }
+    // try{
+    //   $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db_name, $this->username, $this->password);
+    //   $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);   
+    // } catch(PDOException $exception){
+    //     echo "Connection error: " . $exception->getMessage();
+    // }
 
-    $this->connection = $this->conn;
+    // $this->connection = $this->conn;
 
-    return $this->conn;
+    // return $this->conn;
   }
 
   function formGroup($type=NULL,$title=NULL,$name=NULL,$value=NULL,$attribute=NULL,$date_format=NULL){
