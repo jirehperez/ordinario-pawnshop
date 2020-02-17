@@ -14,7 +14,7 @@
   <script src="../assets/js/material/plugins/moment.min.js"></script>
   <!-- <script src="../assets/js/material/plugins/jquery.dataTables.min.js"></script> -->
   <script src="../assets/js/material/plugins/jquery.dataTables-2.min.js"></script>
-  <script src="../assets/js/material/plugins/dataTables.material.min.js"></script>
+  <!-- <script src="../assets/js/material/plugins/dataTables.material.min.js"></script> -->
   <script src="../assets/js/material/plugins/jasny-bootstrap.min.js"></script>
   <script src="../assets/js/material/plugins/arrive.min.js"></script>
 
