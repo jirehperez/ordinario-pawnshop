@@ -11,7 +11,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.material.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
-  <link href="../assets/css/material/material-dashboard.css" rel="stylesheet" />
+  <!-- <link href="../assets/css/material/material-dashboard.css" rel="stylesheet" /> -->
+  <link href="../assets/css/material/material-dashboard-pro.min.css" rel="stylesheet" />
   <link href="../assets/css/material/material.min.css" rel="stylesheet" />
   <link href="../assets/css/material/datatables-material.min.css" rel="stylesheet" />
   <link href="../assets/css/form.css" rel="stylesheet" />

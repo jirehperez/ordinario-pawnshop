@@ -75,7 +75,7 @@
                 <div class="col-xl-12 mb-3" style="margin-top:-2rem">
                     <div class="form-group row" style="display:flex;justify-content:center">
                         <div class="dropdown">
-                          <button class="btn btn-warning dropdown-toggle" style="width:250px" data-name="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button class="dropdown-toggle" style="width:250px" data-name="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Branch
                           </button>
                           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:250px">

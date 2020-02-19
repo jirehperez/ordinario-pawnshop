@@ -9,6 +9,8 @@
   <script src="../assets/js/material/core/bootstrap-material-design.min.js"></script>
   <script src="../assets/js/material/plugins/perfect-scrollbar.jquery.min.js"></script>
     <script src="../assets/js/material/material-dashboard.js"></script>
+    <!-- <script src="../assets/js/material/plugins/bootstrap-select.js"></script> -->
+    <script src="../assets/js/material/plugins/bootstrap-selectpicker.js"></script>
 
   <!-- Plugin for the momentJs  -->
   <script src="../assets/js/material/plugins/moment.min.js"></script>
