@@ -28,10 +28,10 @@
                   <h4 class="card-title">Notice Listing</h4>
                 </div>
                 <div class="card-body">
-                  <div class="col-xl-12 mb-4 row">
-                      <div>
+                  <div class="col-xl-8 col-lg-11 col-md-10 col-sm-12 col-12 mb-4 row">
+                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
                         <div class="dropdown bootstrap-select show-tick">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" title="Month" tabindex="-98" style="width:150px!important;">
+                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Month" tabindex="-98" style="width:150px!important;">
                             <option>January</option>
                             <option>February</option>
                             <option>March</option>
@@ -47,9 +47,9 @@
                         </select>
                         </div>
                       </div>
-                      <div>
-                        <div class="dropdown">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" title="Year" tabindex="-98" style="width:150px!important;">
+                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                        <div class="dropdown bootstrap-select show-tick">
+                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Year" tabindex="-98" style="width:150px!important;">
                             <option>2016</option>
                             <option>2017</option>
                             <option>2018</option>
@@ -59,13 +59,16 @@
                         </select>
                         </div>
                       </div>
-                      <div>
-                        <div class="dropdown bootstrap-select">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" title="Branch" tabindex="-98" style="width:150px!important;">
+                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+                        <div class="dropdown bootstrap-select show-tick">
+                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Branch" tabindex="-98" style="width:150px!important;">
                             <option>Manila</option>
                             <option>Daet</option>
                         </select>
                         </div>
+                      </div>
+                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mt-2">
+                        <button type="button" class="btn btn-default btn-sm">Go</button>
                       </div>
                   </div>
 
