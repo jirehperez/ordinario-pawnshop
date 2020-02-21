@@ -479,7 +479,7 @@
   });
       
   $(document).ready(function(){
-    $('#datepicker').datepicker({
+    $('.air_date_picker').datepicker({
     language: 'en',
     todayButton: new Date(),
     autoClose : true

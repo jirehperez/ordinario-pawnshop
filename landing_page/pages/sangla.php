@@ -52,7 +52,7 @@
       margin-right: auto !important;
       margin-left: auto !important;
     } */
-    .mx-auto-jc:not(.col-sm-7-jc-amount) {
+    .mx-auto-jc:not(.col-sm-7-jc-amount){
       margin-right: auto !important;
       margin-left: auto !important;
       }
@@ -116,7 +116,7 @@
       </div>
       <div class="card">
         <form action="reports/pawn_print.php">
-        <section class="batch1" style="display:none">
+        <section class="batch1">
           <div class="card-header card-header-primary text-center">
             TICKET DETAILS
           </div> <br>
@@ -152,7 +152,7 @@
                 <label class="col-xl-5">Transaction Date:</label>
                 <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-11 mx-auto-jc">
 
-                  <input type="text" name="transaction_date" id="datepicker" data-id="" class="form-control form-control-jc" onblur="transaction_dates(this)">
+                  <input type="text" name="transaction_date" data-id="" class="form-control form-control-jc air_date_picker" onblur="transaction_dates(this)">
                 </div>
               </div>
                 <div class="row mt-3">
@@ -292,7 +292,7 @@
           </div>
         </section>
         <!-- Computation Tab -->
-        <section class="batch4">
+        <section class="batch4" style="display:none">
           <div class="card-header card-header-primary text-center">
             COMPUTATION
           </div> <br>

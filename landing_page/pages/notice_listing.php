@@ -1,3 +1,27 @@
+<style>
+    @media(max-width: 576px){
+      .text-center-jc {
+       text-align:center
+      }
+      .btn-sm-jc{
+        padding: 12px 20px;
+        font-size: 12px;
+      }
+    }
+
+    @media(min-width: 576px){
+      .btn-sm-jc{
+        padding: 6px 20px;
+        font-size: 11px;
+      }
+    }
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: -webkit-fill-available!important
+}
+.filter-option {
+    font-size: 14px;
+}
+</style>
 <div class="content">
   <!-- <div class="container-fluid"> -->
     
@@ -21,64 +45,51 @@
     <!-- <div class="col-xl-12 container table-responsive" id="itemTable"> -->
     <div class="col-xl-12">
               <div class="card">
-                <div class="card-header card-header-primary card-header-icon">
-                  <div class="card-icon">
+                <div class="card-header card-header-icon">
+                  <div class="card-icon" style="background: linear-gradient(60deg,#702230,#702230)">
                     <i class="material-icons">assignment</i>
                   </div>
                   <h4 class="card-title">Notice Listing</h4>
                 </div>
                 <div class="card-body">
-                  <div class="col-xl-8 col-lg-11 col-md-10 col-sm-12 col-12 mb-4 row">
-                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                        <div class="dropdown bootstrap-select show-tick">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Month" tabindex="-98" style="width:150px!important;">
-                            <option>January</option>
-                            <option>February</option>
-                            <option>March</option>
-                            <option>April</option>
-                            <option>May</option>
-                            <option>June</option>
-                            <option>July</option>
-                            <option>August</option>
-                            <option>September</option>
-                            <option>October</option>
-                            <option>November</option>
-                            <option>December</option>
-                        </select>
-                        </div>
+                <div class="row">
+                    <div class="col-xl-7 col-lg-10 col-md-10 col-sm-12 col-12 mb-4 row">
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <input type="text" name="notice_month_year" data-id=""  data-min-view="months" data-view="months" data-date-format="MM yyyy" class="form-control air_date_picker" placeholder="Month / Year">
+                          </div>
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <div class="dropdown bootstrap-select show-tick">
+                              <select class="selectpicker" data-size="7" data-style="select-with-transition" title="Branch" tabindex="-98">
+                                <option>Manila</option>
+                                <option>Daet</option>
+                            </select>
+                            </div>
+                          </div>
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-2 text-center-jc">
+                            <button type="button" class="btn btn-default btn-sm-jc"><i class="material-icons">search</i></button>
+                          </div>
                       </div>
-                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                        <div class="dropdown bootstrap-select show-tick">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Year" tabindex="-98" style="width:150px!important;">
-                            <option>2016</option>
-                            <option>2017</option>
-                            <option>2018</option>
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                        </select>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                        <div class="dropdown bootstrap-select show-tick">
-                          <select class="selectpicker" data-size="7" data-style="select-with-transition" data-width="140px" title="Branch" tabindex="-98" style="width:150px!important;">
-                            <option>Manila</option>
-                            <option>Daet</option>
-                        </select>
-                        </div>
-                      </div>
-                      <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 mt-2">
-                        <button type="button" class="btn btn-default btn-sm">Go</button>
-                      </div>
-                  </div>
 
-                <div class="material-datatables">
+                      <div class="col-xl-5 col-lg-10 col-md-10 col-sm-12 col-12 mb-4 row">
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <input type="text" name="jewelry_date" data-id="" class="form-control air_date_picker" placeholder="Jewelry">
+                          </div>
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12">
+                            <input type="text" name="non_jewelry_date" data-id="" class="form-control air_date_picker" placeholder="Non-Jewelry">
+                          </div>
+                          <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 mt-2 text-center-jc">
+                            <a href="reports/notice_listing_print.php" target="_blank" class="btn btn-default btn-warning btn-sm-jc"><i class="material-icons">archive</i></a>
+                            <!-- change to button if finalized -->
+                          </div>
+                      </div>
+                </div>
+
                 <div class="row">
                   <div class="col-xl-12 table-responsive">
-                    <table id="dataTableExample" class="mdl-data-table" style="width:100%">
+                    <table class="table table-hover" style="width:100%">
                         <thead>
                             <tr>
-                                <th></th>
+                                <th>#</th>
                                 <th>Pawn Ticket</th>
                                 <th>Customer</th>
                                 <th>Last Transaction Date</th>
@@ -139,7 +150,6 @@
                         </tbody>
                     </table>
                   </div>
-                </div>
                 </div>
                 <!-- end content-->
               </div>
