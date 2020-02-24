@@ -27,7 +27,11 @@
   <!-- <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script> -->
   <?php isset($_GET['sub']) == 'renew_redeem' ? '<script src="../assets/js/modal.js"></script>' : ''; ?>
   <script>
+      // checkHash();
+
+
     $(document).ready(function() {
+
       $().ready(function() {
         $sidebar = $('.sidebar');
 
@@ -487,8 +491,29 @@
     // minDate: new Date() // Now can select only dates, which goes after today
 });
 // $("#selectpicker").selectpicker();
+// function checkHash(){
+//     if(type){
+//       // console.log(type);
+//       branch.style.display = 'flex';
+//       $('#branch_value')
+//       .html("<option value='daet'>Daet Branch</option><option value='manila'>Manila Branch</option>")
+//         .selectpicker('refresh');
+//       const selectValue = document.querySelector('#karat_type option[value='+type+']');
+//       selectValue.setAttribute("selected", "selected");
+
+//       // console.log(selectValue);
+//     }
+//     if(window.location.hash){
+//       spinner.style.display = 'flex';
+//       tablesData(window.location.hash.substring(1));
+//       // dropdown.innerHTML = window.location.hash.substring(1) + " Branch";
+//     }else{
+//       // dropdown.innerHTML = 'Select Branch';
+//     }
+//   }
 
  });
+
 </script>
 </body>
 

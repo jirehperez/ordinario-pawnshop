@@ -66,31 +66,26 @@
 
       <div class="card">
         <form action="reports/pawn_print.php">
-        <section class="batch1">
+        <section class="karat_rates">
           <div class="card-header card-header-primary text-center">
           KARAT RATES
           </div> <br>
           <div class="card-body">
             <div class="col-xl-12 row mobile_resize">
-                <div class="col-xl-12 mb-3" style="margin-top:-2rem">
-                    <div class="form-group row" style="display:flex;justify-content:center">
-                        <div class="dropdown">
-                          <button class="btn btn-warning dropdown-toggle" style="width:250px" data-name="dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Branch
-                          </button>
-                          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="width:250px">
-                            <a class="dropdown-item dropdown_item" href="#daet">Daet Branch</a>
-                            <a class="dropdown-item dropdown_item" href="#manila">Manila Branch</a>
-                          </div>
-                        </div>
-                            <!-- <select name="branch" id="branch" class="form-control">
-                            <option disabled="" selected=""></option>
-                            <option value="Daet">Daet</option>
-                            <option value="Manila">Manila</option>
-                            </select>
-                             -->
-           
-                    </div>
+                <div class="col-xl-12 mb-3" style="display:flex;justify-content:center;margin-top:-2rem">
+                              <select class="selectpicker show-tick" id="karat_type" data-size="7" data-style="btn-success" title="Type" data-width="30%" tabindex="-98">
+                                  <option value="All">All</option>
+                                  <option value="Jewelry">Jewelry Items</option>
+                                  <option value="Non-Jewelry-Items">Non-Jewelry Items</option>
+                                  <option value="Non-Jewelry-Deductions">Non-Jewelry Deductions</option>
+                                  <option value="Other-Charges">Other Charges</option>
+                              </select>
+                </div>
+                <div class="col-xl-12 mb-3" style="display:none;justify-content:center;margin-top:-1rem" id="branch">
+                      <select class="selectpicker show-tick" id="branch_value" data-size="7" data-style="btn-success" title="Branch" tabindex="-98" data-width="30%">
+                              <!-- <option>Daet Branch</option> -->
+                              <!-- <option>Manila Branch</option> -->
+                        </select>
                 </div>
               <div class="row col-xl-12 spinner-display" style="justify-content:center;height:50vh;align-items: center;display:none">
                 <div class="spinner-border text-success" style="width: 3rem; height: 3rem;" role="status">
@@ -167,24 +162,45 @@
 // console.log(window.location.hash.substring(1));
 
 const dropdown_item = document.querySelectorAll('.dropdown_item');
+const karat_type = document.getElementById('karat_type');
+const branch = document.getElementById('branch');
+const branch_value = document.getElementById('branch_value');
 const dropdown = document.getElementsByClassName("dropdown-toggle")[0];
 const spinner = document.getElementsByClassName("spinner-display")[0];
 const table = document.getElementById('table');
-  checkHash();
+const urlParams = new URLSearchParams(window.location.search);
+const type = urlParams.get('type');
+checkHash();
+    karat_type.addEventListener('change', function(){
+        branch.style.display = 'flex';
+        const value = this.value;
+        // window.location = '#' + value;
+        window.history.pushState( {} , '', '?pg=form&sub=karat_rates&tbl=settings&type='+value ); // append query string without refreshing
+        $('#branch_value')
+        .html("<option value='daet'>Daet Branch</option><option value='manila'>Manila Branch</option>")
+        .selectpicker('refresh');
+    });
 
-  for(let i = 0; i < dropdown_item.length; i++){
-      dropdown_item[i].addEventListener('click', function(){
+    branch_value.addEventListener('change', function(){
+        const value = this.value;
         spinner.style.display = 'flex';
-        table.style.display = 'none';
-        // gold_table.innerHTML = '';
-        // silver_table.innerHTML = '';
-        // gold_table.innerHTML = '';
-        const dropdown_value = dropdown_item[i].getAttribute("href").substring(1);
-        const dropdown_text = dropdown_item[i].text;
-        dropdown.innerHTML = dropdown_text;
-        tablesData(dropdown_value);
-      });
-  }
+        window.location = '#' + value;
+        tablesData(value);
+
+    });
+  // for(let i = 0; i < dropdown_item.length; i++){
+  //     dropdown_item[i].addEventListener('click', function(){
+  //       spinner.style.display = 'flex';
+  //       table.style.display = 'none';
+  //       // gold_table.innerHTML = '';
+  //       // silver_table.innerHTML = '';
+  //       // gold_table.innerHTML = '';
+  //       const dropdown_value = dropdown_item[i].getAttribute("href").substring(1);
+  //       const dropdown_text = dropdown_item[i].text;
+  //       dropdown.innerHTML = dropdown_text;
+  //       tablesData(dropdown_value);
+  //     });
+  // }
 
   function tablesData(branch){
       fetch('scripts/karat_rates_script.php?branch='+branch)
@@ -211,27 +227,37 @@ const table = document.getElementById('table');
           spinner.style.display = "none";
       });
   }
+
   function checkHash(){
+    if(type){
+      // console.log(type);
+      branch.style.display = 'flex';
+
+      const selectValue = document.querySelector('#karat_type option[value='+type+']');
+      selectValue.setAttribute("selected", "selected");
+
+    }
     if(window.location.hash){
       spinner.style.display = 'flex';
       tablesData(window.location.hash.substring(1));
-      dropdown.innerHTML = window.location.hash.substring(1) + " Branch";
+      // dropdown.innerHTML = window.location.hash.substring(1) + " Branch";
     }else{
-      dropdown.innerHTML = 'Select Branch';
+      // dropdown.innerHTML = 'Select Branch';
     }
   }
 
-  myBtn = document.getElementById("myBtn");
+  // myBtn = document.getElementById("myBtn");
 
-  window.onscroll = function() {scrollFunction()};
+  // window.onscroll = function() {scrollFunction()};
 
-  function scrollFunction(){
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-      myBtn.style.display = "block";
-    } else {
-      myBtn.style.display = "none";
-    }
-  }
+  // function scrollFunction(){
+  //   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+  //     myBtn.style.display = "block";
+  //   } else {
+  //     myBtn.style.display = "none";
+  //   }
+  // }
+
   function topFunction(){
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
