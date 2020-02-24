@@ -10,6 +10,12 @@
         flex:0 0 61.478%;
         margin-left:18.5%;
       }
+      .col-sm-7-jc{
+        flex:0 0 62.77777%;
+        margin-left:21%;
+      }
+            
+
 
     }
     @media(max-width: 576px){
@@ -25,22 +31,33 @@
       .float-right-mey{
         float: right;
       }
+
       .col-7-jc-amount{
         flex:0 0 74.378%;
         margin-left:3%;
+      }
+
+      .col-7-jc{
+        flex:0 0 84.77777%;
+        margin-left:11.2%;
+      }
+      
+      .col-charges{
+        margin-left:-15px;
       }
       
     }
     
     @media (min-width: 768px){
       .col-md-7-jc{
-        flex:0 0 62.77777%;
-        margin-left:-0.7rem;
+        flex:0 0 61.77777%;
+        margin-left:0.2rem;
       }
       .col-md-7-jc-amount{
         flex:0 0 61.478%;
         margin-left:2.3rem;
       }
+
     }
 
 
@@ -48,19 +65,22 @@
     .text-md-center-jc {
       text-align: center !important;
     }
+    .col-charges{
+        margin-left:-15px;
+      }
     /* .mx-auto-jc {
       margin-right: auto !important;
       margin-left: auto !important;
     } */
-    .mx-auto-jc:not(.col-sm-7-jc-amount){
+    .mx-auto-jc:not(.col-sm-7-jc-amount):not(.col-sm-7-jc){
       margin-right: auto !important;
       margin-left: auto !important;
       }
 }
 @media (min-width: 992px){
       .col-lg-7-jc{
-        flex:0 0 62.22222%;
-        margin-left:-0.7rem;
+        flex:0 0 61.22222%;
+        margin-left:0.3rem;
       }
       .col-lg-7-jc-amount{
         flex:0 0 54.878%;
@@ -69,8 +89,8 @@
   }
     @media(min-width: 1200px){
       .col-xl-12-jc{
-        flex:0 0 63.22222%;
-        margin-left:-0.4rem;
+        flex:0 0 62.22222%;
+        margin-left:0.9%;
       }
       .col-xl-12-jc-amount{
         flex:0 0 42.878%;
@@ -94,6 +114,8 @@
   .form-control-jc{
     margin-top : -1.3rem;
   }
+
+
 </style>
 <div class="content">
   <div class="container-fluid">
@@ -116,22 +138,22 @@
       </div>
       <div class="card">
         <form action="reports/pawn_print.php">
-        <section class="batch1">
+        <section class="batch1" style="display:none">
           <div class="card-header card-header-primary text-center">
             TICKET DETAILS
           </div> <br>
           <div class="card-body">
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 row mobile_resize">
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
-                <div class="form-group row">
-                  <label class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12 col-form-label">PT #:</label>
-                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pt-2">
-                    1
+                <div class="form-group row pt-2">
+                  <label class="col-xl-5 col-lg-12 col-md-12 col-sm-12 col-12">PT #:</label>
+                  <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" style="font-size:14px">
+                    00001
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-xl-5 col-form-label">Transaction Type:</label>
-                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-12  mx-auto-jc">
+                  <label class="col-xl-5 pt-2">Transaction Type:</label>
+                  <div class="col-xl-6 col-lg-10 col-md-10 col-sm-8 col-12 pb-3 mx-auto-jc">
                     <select name="transaction_type" id="transaction_type" class="form-control" data-style="btn-info">
                       <option disabled="" selected=""></option>
                       <option value="Old">Old</option>
@@ -139,9 +161,9 @@
                     </select>
                   </div>
                 </div>
-                <div class="form-group row">
-                  <label class="col-xl-5 col-form-label">Processed By:</label>
-                  <div class="col-xl-6 pt-2">
+                <div class="form-group row pt-3">
+                  <label class="col-xl-5">Processed By:</label>
+                  <div class="col-xl-6" style="font-size:14px">
                     Chris Domingo
                   </div>
                 </div>
@@ -188,7 +210,7 @@
              <div class="mx-auto col-xl-6 col-lg-7 col-md-7 col-sm-12 text-md-center-jc ">
                 <div class="form-group row">
                 <label class="col-xl-4 col-lg-4 col-md-4 mt-2">Name</label>
-                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 pb-4 mx-auto-jc">
                     <select name="customer" id="customer" class="form-control">
                       <option></option>
                       <option value="REGAN INDUSTRIAL SALES INC.">REGAN INDUSTRIAL SALES INC.</option>
@@ -199,7 +221,7 @@
                 </div>
                 <div class="form-group row">
                 <label class="col-xl-4 col-lg-4 col-md-4 mt-2">ID Presented</label>
-                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
+                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 pb-4 mx-auto-jc">
                       <select name="id_type" id="id_type" class="form-control">
                         <option></option>
                         <option value="SSS">SSS</option>
@@ -212,7 +234,7 @@
                 </div>
                 <div class="form-group row">
                 <label class="col-xl-4 col-lg-4 col-md-4 mt-2">Country</label>
-                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 mx-auto-jc">
+                  <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-11 pb-4 mx-auto-jc">
                     <select name="country_id" id="country_id" class="form-control">
                       <option disabled="" selected=""></option>
                       <option value="Afghanistan"> Afghanistan </option>
@@ -228,7 +250,7 @@
                 </div>
                 <div class="row">
                 <label class="col-xl-4 col-lg-4 col-md-4 mt-3 ml-3">ID Number:</label>
-                  <div class="col-xl-12-jc col-lg-7-jc col-md-7-jc col-sm-8 col-11 mx-auto-jc">
+                  <div class="col-xl-12-jc col-lg-7-jc col-md-7-jc col-sm-7-jc col-7-jc mx-auto-jc">
                      <input type="text" class="form-control" name="id_number" id="id_number">
                   </div>
                 </div>
@@ -292,7 +314,7 @@
           </div>
         </section>
         <!-- Computation Tab -->
-        <section class="batch4" style="display:none">
+        <section class="batch4">
           <div class="card-header card-header-primary text-center">
             COMPUTATION
           </div> <br>
@@ -327,8 +349,8 @@
               <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-md-center-jc">
                 <div class="form-group row">
                   <label class="col-xl-3 mt-3">Other Charges</label>
-                    <div class="col-xl-6 col-lg-8 col-md-9 col-sm-8 col-12 mx-auto-jc"> 
-                      <select class="form-control">
+                    <div class="col-xl-6 col-lg-8 col-md-9 col-sm-8 col-12 mt-3 pb-3 mx-auto-jc"> 
+                      <select class="form-control col-charges">
                         <option></option>
                       </select>
                     </div>

@@ -24,7 +24,7 @@
   <?php isset($_GET['sub']) == 'renew_redeem' ? '<link href="../assets/css/modal.css" rel="stylesheet" />' : ''; ?>
 </head>
 
-<body class="">
+<body>
   <div class="wrapper ">
     <div class="sidebar" data-color="danger" data-background-color="white">
       <!-- data-color="purple | azure | green | orange | danger" data-image="../assets/img/ordinario.jpg" -->
