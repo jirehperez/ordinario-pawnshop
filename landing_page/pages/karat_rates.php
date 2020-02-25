@@ -71,9 +71,9 @@
           KARAT RATES
           </div> <br>
           <div class="card-body">
-            <div class="col-xl-12 row mobile_resize">
+            <div class="col-xl-12">
                 <div class="col-xl-12 mb-3" style="display:flex;justify-content:center;margin-top:-2rem">
-                              <select class="selectpicker show-tick" id="karat_type" data-size="7" data-style="btn-success" title="Type" data-width="30%" tabindex="-98">
+                              <select class="selectpicker show-tick" id="karat_type" data-size="7" data-style="btn-success" title="Type" data-width="30%" tabindex="-98" style="text-align-last:center">
                                   <option value="All">All</option>
                                   <option value="Jewelry">Jewelry Items</option>
                                   <option value="Non-Jewelry-Items">Non-Jewelry Items</option>
@@ -93,59 +93,286 @@
                   </div>
               </div>
             
-                <section id="table" class="col-xl-12 row" style="display:none">
+          <section id="jewelry_table" class="col-xl-12" style="display:none;">
                 
-              <div class="col-xl-7">
-                  <h2 class="text-center">Gold</h2>
-                <table class="table table-border">
-                    <thead>
-                        <tr>
-                            <th>Karat</th>
-                            <th>Gram %</th>
-                            <th>Regular Rate</th>
-                            <th>Special Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody id="gold_table">
+                  <div class="card">
+                        <div class="card-header card-header-icon">
+                          <div class="card-icon" style="background: linear-gradient(60deg,#702230,#702230)">
+                            <i class="material-icons">assignment</i>
+                          </div>
+                          <h4 class="card-title">Jewelry Items</h4>
+                        </div>
+                        <div class="card-body col-xl-12 row">
+                            <div class="col-xl-7">
+                                <h2 class="text-center">Gold</h2>
+                                <table class="table table-border">
+                                    <thead>
+                                        <tr>
+                                            <th>Karat</th>
+                                            <th>Gram %</th>
+                                            <th>Regular Rate</th>
+                                            <th>Special Rate</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="gold_table">
 
-                    </tbody>
-                </table>
-              </div>
+                                    </tbody>
+                                </table>
+                            </div>
 
-              <div class="col-xl-5">
-                  <h2 class="text-center">Silver</h2>
-                <table class="table table-border silver_table">
-                    <thead>
-                        <tr>
-                            <th>Karat</th>
-                            <th>Gram %</th>
-                            <th>Regular Rate</th>
-                            <th>Special Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody id="silver_table">
+                        <div class="col-xl-5">
+                            <h2 class="text-center">Silver</h2>
+                            <table class="table table-border silver_table">
+                                <thead>
+                                    <tr>
+                                        <th>Karat</th>
+                                        <th>Gram %</th>
+                                        <th>Regular Rate</th>
+                                        <th>Special Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="silver_table">
 
-                    </tbody>
-                </table>
+                                </tbody>
+                            </table>
 
-                <h2 class="text-center">Platinum</h2>
-                <table class="table table-border platinum">
-                    <thead>
-                        <tr>
-                            <th>Karat</th>
-                            <th>Gram %</th>
-                            <th>Regular Rate</th>
-                            <th>Special Rate</th>
-                        </tr>
-                    </thead>
-                    <tbody id="platinum_table">
+                            <h2 class="text-center">Platinum</h2>
+                            <table class="table table-border platinum">
+                                <thead>
+                                    <tr>
+                                        <th>Karat</th>
+                                        <th>Gram %</th>
+                                        <th>Regular Rate</th>
+                                        <th>Special Rate</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="platinum_table">
 
 
-                    </tbody>
-                </table>
+                                </tbody>
+                            </table>
+                         </div>
+          
+                        <!-- end content-->
+                      </div>
+                      <!--  end card  -->
+                    </div>
+              </section>
+
+              <section id="non_jewelry_table" class="col-xl-12" style="display:none">
+
+                      <div class="card">
+                        <div class="card-header card-header-icon">
+                          <div class="card-icon" style="background: linear-gradient(60deg,#702230,#702230)">
+                            <i class="material-icons">assignment</i>
+                          </div>
+                          <h4 class="card-title">Non-Jewelry Items</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="col-xl-12">
+                                <!-- <h2 class="text-center">Add Items</h2> -->
+                              <table class="table table-border">
+                                  <thead>
+                                      <tr>
+                                          <th>Item Name</th>
+                                          <th>Appraised Value</th>
+                                          <th colspan="2">Fields</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td style="width:30%"><input type="text" name="item_name" id="item_name" class="form-control" placeholder="Item Name"></td>                                       
+                                            <td style="width:30%"><input type="text" name="appraised_value" id="appraised_value" class="form-control" placeholder="Appraised Value"></td>                                       
+                                            <td style="width:20%"><input type="text" name="label" id="label" class="form-control" placeholder="Label"></td>                                       
+                                            <td style="width:20%">
+                                            <select name="element" id="element" class="form-control" style="top:-22px;">
+                                                <option>TextBox</option>
+                                                <option>Select</option>
+                                            </select>
+                                            </td>                                       
+                                        </tr>
+                                  </tbody>
+                              </table>
+                                <div class="col-xl-12">
+                                     <button type="button" class="btn btn-sm" style="left:-15px">Add</button>
+
+                                     <div class="col-xl-12">
+                                        <div class="row pull-right">
+                                            <input type="text" class="form-control" placeholder="Auth Code">
+                                            <button type="button" class="btn btn-sm btn-success ml-2">Save</button>
+                                        </div>
+                                         
+
+                                     </div>
+                                </div>
+
+                                    <table class="table table-border">
+                                      <thead>
+                                          <tr>
+                                              <th>Item Name</th>
+                                              <th>Appraised Value</th>
+                                              <th>Actions</th>
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                            <tr>
+                                                <td>G-Shock</td>                                       
+                                                <td>8,000</td>                                       
+                                                <td style="width:15%">
+                                                <button type="button" class="btn btn-xsm"><i class="material-icons">edit</i></button>
+                                                <button type="button" class="btn btn-warning btn-xsm"><i class="material-icons">delete</i></button>
+                                                </td>                                       
+                                            </tr>
+                                      </tbody>
+                                  </table>
+                            </div>
+          
+                        <!-- end content-->
+                      </div>
+                      <!--  end card  -->
+                    </div>
+                    
+
                 </section>
-              </div>
- 
+
+                <section id="deductions_non_jewelry_table" class="col-xl-12" style="display:none">
+
+                  <div class="card">
+                    <div class="card-header card-header-icon">
+                      <div class="card-icon" style="background: linear-gradient(60deg,#702230,#702230)">
+                        <i class="material-icons">assignment</i>
+                      </div>
+                      <h4 class="card-title">Deductions Non-Jewelry</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xl-12">
+                            <!-- <h2 class="text-center">Add Items</h2> -->
+                          <table class="table table-border">
+                              <thead>
+                                  <tr>
+                                      <th>Item Name</th>
+                                      <th>Amount</th>
+                                      <th></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                    <tr>
+                                        <td><input type="text" name="deductions_name" id="deductions_name" class="form-control" placeholder="Name"></td>                                       
+                                        <td><input type="text" name="deductions_amount" id="deductions_amount" class="form-control" placeholder="Amount"></td>                                       
+                                        <td></td>
+                                    </tr>
+                              </tbody>
+                          </table>
+                            <div class="col-xl-12">
+                                <button type="button" class="btn btn-sm" style="left:-15px">Add</button>
+
+                                <div class="col-xl-12">
+                                    <div class="row pull-right">
+                                        <input type="text" class="form-control" placeholder="Auth Code">
+                                        <button type="button" class="btn btn-sm btn-success ml-2">Save</button>
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+
+                                <table class="table table-border">
+                                  <thead>
+                                      <tr>
+                                          <th>Item Name</th>
+                                          <th>Amount</th>
+                                          <th>Actions</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td>G-Shock</td>                                       
+                                            <td>8,000</td>                                       
+                                            <td style="width:20%">
+                                            <button type="button" class="btn btn-xsm"><i class="material-icons">edit</i></button>
+                                            <button type="button" class="btn btn-warning btn-xsm"><i class="material-icons">delete</i></button>
+                                            </td>                                       
+                                        </tr>
+                                  </tbody>
+                              </table>
+                        </div>
+
+                    <!-- end content-->
+                  </div>
+                  <!--  end card  -->
+                  </div>
+
+
+              </section>
+
+              <section id="other_charges" class="col-xl-12" style="display:none">
+
+                  <div class="card">
+                    <div class="card-header card-header-icon">
+                      <div class="card-icon" style="background: linear-gradient(60deg,#702230,#702230)">
+                        <i class="material-icons">assignment</i>
+                      </div>
+                      <h4 class="card-title">Other Charges</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-xl-12">
+                            <!-- <h2 class="text-center">Add Items</h2> -->
+                          <table class="table table-border">
+                              <thead>
+                                  <tr>
+                                      <th>Name</th>
+                                      <th>Amount</th>
+                                      <th></th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                    <tr>
+                                        <td><input type="text" name="other_charges_name" id="other_charges_name" class="form-control" placeholder="Name"></td>                                       
+                                        <td><input type="text" name="other_charges_amount" id="other_charges_amount" class="form-control" placeholder="Amount"></td>                                       
+                                        <td></td>
+                                    </tr>
+                              </tbody>
+                          </table>
+                            <div class="col-xl-12">
+                                <button type="button" class="btn btn-sm" style="left:-15px">Add</button>
+
+                                <div class="col-xl-12">
+                                    <div class="row pull-right">
+                                        <input type="text" class="form-control" placeholder="Auth Code">
+                                        <button type="button" class="btn btn-sm btn-success ml-2">Save</button>
+                                    </div>
+                                    
+
+                                </div>
+                            </div>
+
+                                <table class="table table-border">
+                                  <thead>
+                                      <tr>
+                                          <th>Name</th>
+                                          <th>Amount</th>
+                                          <th>Actions</th>
+                                      </tr>
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td>Documentary Stamp</td>                                       
+                                            <td>300</td>                                       
+                                            <td style="width:20%">
+                                            <button type="button" class="btn btn-xsm"><i class="material-icons">edit</i></button>
+                                            <button type="button" class="btn btn-warning btn-xsm"><i class="material-icons">delete</i></button>
+                                            </td>                                       
+                                        </tr>
+                                  </tbody>
+                              </table>
+                        </div>
+
+                    <!-- end content-->
+                  </div>
+                  <!--  end card  -->
+                  </div>
+
+              </section>              
             </div>
           </div>
         </section>
@@ -167,7 +394,10 @@ const branch = document.getElementById('branch');
 const branch_value = document.getElementById('branch_value');
 const dropdown = document.getElementsByClassName("dropdown-toggle")[0];
 const spinner = document.getElementsByClassName("spinner-display")[0];
-const table = document.getElementById('table');
+const jewelry_table = document.getElementById('jewelry_table');
+const non_jewelry_table = document.getElementById('non_jewelry_table');
+const deductions_non_jewelry_table = document.getElementById('deductions_non_jewelry_table');
+const other_charges = document.getElementById('other_charges');
 const urlParams = new URLSearchParams(window.location.search);
 const type = urlParams.get('type');
 checkHash();
@@ -179,13 +409,37 @@ checkHash();
         $('#branch_value')
         .html("<option value='daet'>Daet Branch</option><option value='manila'>Manila Branch</option>")
         .selectpicker('refresh');
+        jewelry_table.style.display = "none";
+        non_jewelry_table.style.display = "none";
+        deductions_non_jewelry_table.style.display = "none";
+        other_charges.style.display = "none";
+
     });
 
     branch_value.addEventListener('change', function(){
         const value = this.value;
         spinner.style.display = 'flex';
         window.location = '#' + value;
-        tablesData(value);
+        switch(karat_type.value){
+          case 'Jewelry':
+            tablesData(value);
+          break;
+          case 'Non-Jewelry-Items':
+            non_jewelry_table.style.removeProperty('display');
+            spinner.style.display = "none";
+
+          break;
+          case 'Non-Jewelry-Deductions':
+            deductions_non_jewelry_table.style.removeProperty('display');
+            spinner.style.display = "none";
+
+          break;
+          case 'Other-Charges':
+            other_charges.style.removeProperty('display');
+            spinner.style.display = "none";
+
+          break;
+        }
 
     });
   // for(let i = 0; i < dropdown_item.length; i++){
@@ -223,23 +477,33 @@ checkHash();
                 // <tr><td>"+myJson.gold.karat[i]+"</td><td>"+myJson.gold.gram[i]+"</td><td>"+myJson.gold.regular_rate[i]+"</td><td>"+myJson.gold.special_rate[i]+"</td></tr>";
            
             }
-          table.style.removeProperty('display');
+          jewelry_table.style.removeProperty('display');
           spinner.style.display = "none";
       });
   }
 
   function checkHash(){
-    if(type){
-      // console.log(type);
-      branch.style.display = 'flex';
-
-      const selectValue = document.querySelector('#karat_type option[value='+type+']');
-      selectValue.setAttribute("selected", "selected");
-
-    }
     if(window.location.hash){
       spinner.style.display = 'flex';
-      tablesData(window.location.hash.substring(1));
+      const value = window.location.hash.substring(1);
+      // console.log(type);
+      switch(type){
+          case 'Jewelry':
+            tablesData(value);
+          break;
+          case 'Non-Jewelry-Items':
+            non_jewelry_table.style.removeProperty('display');
+            spinner.style.display = "none";
+          break;
+          case 'Non-Jewelry-Deductions':
+            deductions_non_jewelry_table.style.removeProperty('display');
+            spinner.style.display = "none";
+          break;
+          case 'Other-Charges':
+            other_charges.style.removeProperty('display');
+            spinner.style.display = "none";
+          break;
+        }
       // dropdown.innerHTML = window.location.hash.substring(1) + " Branch";
     }else{
       // dropdown.innerHTML = 'Select Branch';

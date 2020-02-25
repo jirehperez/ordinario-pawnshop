@@ -17,6 +17,7 @@
   <link href="../assets/css/material/datatables-material.min.css" rel="stylesheet" />
   <link href="../assets/css/form.css" rel="stylesheet" />
   <link href="../assets/css/datepicker.css" rel="stylesheet" />
+  <script src="https://s3.amazonaws.com/stitch-sdks/js/bundles/4.6.0/stitch.js"></script>
   <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css"> -->
 
   <!-- <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" /> -->
@@ -111,7 +112,12 @@
                     <span class="sidebar-normal"> Karat Rates </span>
                   </a>
                 </li>
-
+                <li class="nav-item <?= $sub == 'user' ? 'active' : '' ;?>">
+                  <a class="nav-link" href="<?= $connect->url_enc('form','user','settings'); ?>">
+                    <span class="sidebar-mini"> <i class="material-icons">people</i> </span>
+                    <span class="sidebar-normal"> User </span>
+                  </a>
+                </li>
 
               </ul>
             </div>

@@ -6,22 +6,30 @@ $number = 1;
 class OrdinarioHeader extends PDF_MC_Table {
     function Header()
     {
-        $this->Image('../../assets/img/Logo Only.png',30,5,12);
+        $this->Image('../../assets/img/Logo Only.png',33,5,12);
         // Arial bold 15
         $this->SetFont('Arial','B',18);
         
         // Move to the right
-        $this->Cell(80);
+        // $this->Cell(80);
         // Title
-        $this->Cell(30,10,'ORDINARIO PAWNSHOP AND JEWELRY',0,0,'C');
+        // $this->Cell(30,10,'ORDINARIO PAWNSHOP AND JEWELRY',0,0,'C');
+        $this->setX(45);
+        $this->Write(10,'ORDINARIO PAWNSHOP AND JEWELRY');
         $this->SetFont('Arial','B',10);
-        $this->Cell(-36);
-        $this->Cell(0,23,'Daet, Camarines Norte 4600 ');
-        $this->Cell(-111);
-        $this->Cell(0,32,'Tel No: 0544403834');
+        $this->setXY(80,15);
+        $this->Write(10,'Daet, Camarines Norte 4600 ');
+        $this->setXY(87,20);
+        $this->Write(10,'Tel No: 0544403834');
+
+        // $this->Cell(-36);
+        // $this->SetLeftMargin(-20);
+        // $this->Cell(30,23,'Daet, Camarines Norte 4600 ');
+        // $this->Cell(-111);
+        // $this->Cell(30,32,'Tel No: 0544403834');
 
         // Line break
-        $this->Ln(20);
+        $this->Ln(23);
     }
 }
 $fpdf = new OrdinarioHeader;
@@ -29,14 +37,14 @@ $fpdf->AddPage();
 // Set font
 $fpdf->SetFont('Arial','B',11);
 // Move to 8 cm to the right
-$fpdf->SetXY(20, 38);
+$fpdf->SetXY(20, 35);
 
 $fpdf->Cell(20,20,'NOTICE LISTING');
 
 $fpdf->SetFont('Arial','',12);
-$fpdf->SetXY(20, 50);
+$fpdf->SetXY(20, 45);
 $fpdf->Cell(20,20,'Auction Date (Jewelry)');
-$fpdf->SetXY(20, 55);
+$fpdf->SetXY(20, 50);
 $fpdf->Cell(20,20,'Auction Date (Non-Jewelry)');
 
 
@@ -50,7 +58,7 @@ $fpdf->Cell(80,10,'Address', 1,0,'C');
 $fpdf->Cell(25,10,'PT #', 1,0,'C');
 $fpdf->Ln();
 */
-$fpdf->SetY(75);
+$fpdf->SetY(70);
 $fpdf->SetLeftMargin(15);
 $fpdf->SetFont('Arial','B',11);
 

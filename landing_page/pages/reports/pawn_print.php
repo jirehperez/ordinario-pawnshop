@@ -15,7 +15,7 @@ class toWords{
     var $tens = array('', 'ten', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety');
     var $mag = array('', 'thousand', 'million', 'billion', 'trillion');
 
-    function toWords($amount, $major = MAJOR, $minor = MINOR)
+    function toWords($amount, $major = '', $minor = '')
     {
         $this->__toWords__((int)($amount), $major);
         $whole_number_part = $this->words;
